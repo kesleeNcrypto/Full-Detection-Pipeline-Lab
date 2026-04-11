@@ -7,7 +7,7 @@
 ![Status](https://img.shields.io/badge/Project-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## overview 
+## Overview 
 This project implements a **cross-layer detection engineering pipeline** designed to simulate how modern Security Operations Centers (SOC) detect, correlate, investigate, and respond to security events across multiple telemetry sources.
 
 The lab integrates:
@@ -24,8 +24,8 @@ The lab integrates:
 
 ## Why This Project Matters
 
-Modern security environments rely on multiple telemetry sources.  
-Single-layer detections often miss attack chains.
+Modern security environments depend on multiple telemetry sources.  
+Single-layer detections often miss attacker behavior when viewed in isolation.
 
 This project demonstrates:
 
@@ -34,7 +34,13 @@ This project demonstrates:
 - SOC workflow simulation  
 - Investigation-driven detection  
 - Detection validation across multiple layers
-- 
+
+  This directly supports core security principles across the **CIA triad**:
+
+- **Confidentiality** — detecting credential access and unauthorized activity
+- **Integrity** — validating log fidelity, alert accuracy, and telemetry correlation
+- **Availability** — maintaining searchable evidence and investigation continuity across the pipeline
+
 ---
 
 ## Table of Contents
@@ -195,13 +201,6 @@ ps aux
 
 ---
 
-## Repository Structure
-
-
-
-
-
-
 
 ## Repository Structure
 
@@ -348,7 +347,7 @@ https://github.com/kesleeNcrypto
 
 ## License
 
-MIT License
+This project is licensed under the MIT License
 
 
 
