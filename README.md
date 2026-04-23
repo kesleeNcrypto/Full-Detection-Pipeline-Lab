@@ -1,5 +1,12 @@
 # Full Detection Pipeline Lab
 
+Cross-layer SOC detection pipeline engineered to detect, correlate, and investigate attack activity across network, endpoint, and SIEM layers.
+
+**Stack:** Suricata • Sysmon • Wazuh • Splunk • TheHive
+
+**Validated Use Case:** Nmap reconnaissance activity traced from attack execution to SIEM investigation.
+
+
 ![Focus](https://img.shields.io/badge/Focus-Detection%20Engineering-orange)
 ![SIEM](https://img.shields.io/badge/SIEM-Splunk%20%7C%20Wazuh-blue)
 ![Telemetry](https://img.shields.io/badge/Telemetry-Suricata%20%7C%20Sysmon-lightgrey)
@@ -7,55 +14,57 @@
 ![Status](https://img.shields.io/badge/Project-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Overview 
-This project implements a **cross-layer detection engineering pipeline** designed to simulate how modern Security Operations Centers (SOC) detect, correlate, investigate, and respond to security events across multiple telemetry sources.
+---
 
-The lab integrates:
+## Executive Summary
 
-- **Suricata** — Network Detection  
-- **Sysmon** — Endpoint Telemetry  
-- **Wazuh** — Detection & Correlation  
-- **Splunk** — Search & Investigation  
-- **TheHive** — Case Management
+Modern attacks generate signals across multiple layers, yet many environments still investigate alerts in isolation.
 
-  The objective is to validate how a **single attack chain** appears across multiple detection layers and how those signals are correlated into meaningful alerts and investigations.
+This project demonstrates how a modern SOC can:
+
+- Detect suspicious activity at the network layer  
+- Validate endpoint behavior through telemetry  
+- Correlate alerts in a SIEM pipeline  
+- Investigate events in Splunk  
+- Prepare incidents for case management workflows  
+
+The result is an end-to-end detection workflow aligned with real-world blue team operations.
 
 ---
 
 ## Why This Project Matters
 
-Modern security environments depend on multiple telemetry sources.  
-Single-layer detections often miss attacker behavior when viewed in isolation.
+Single-source detections create blind spots.
 
-This project demonstrates:
+This lab validates how one attack chain can be observed from multiple perspectives:
 
-- Cross-layer detection engineering  
-- Telemetry correlation  
-- SOC workflow simulation  
-- Investigation-driven detection  
-- Detection validation across multiple layers
+- **Network Visibility** → reconnaissance / suspicious traffic  
+- **Endpoint Visibility** → processes / command execution  
+- **SIEM Visibility** → normalized alerts / searchable evidence  
+- **Operational Visibility** → investigation continuity  
 
-  This directly supports core security principles across the **CIA triad**:
+### CIA Triad Alignment
 
-- **Confidentiality** — detecting credential access and unauthorized activity
-- **Integrity** — validating log fidelity, alert accuracy, and telemetry correlation
-- **Availability** — maintaining searchable evidence and investigation continuity across the pipeline
+- **Confidentiality** — detect credential access and unauthorized activity  
+- **Integrity** — validate alert accuracy and log fidelity  
+- **Availability** — preserve investigation workflows and searchable logs 
 
 ---
 
 ## Table of Contents
 
-- [Overview](#overview)
+- [Executive Summary](#executive-summary)
 - [Why This Project Matters](#why-this-project-matters)
 - [Architecture](#architecture)
 - [Project Objectives](#project-objectives)
 - [Detection Pipeline Components](#detection-pipeline-components)
 - [Phase 1 Attack Scenario](#phase-1-attack-scenario)
 - [Expected Detection Flow](#expected-detection-flow)
+- [Detection Validation Evidence](#detection-validation-evidence) 
 - [Technologies Used](#technologies-used)
 - [Repository Structure](#repository-structure)
 - [MITRE ATT&CK Mapping](#mitre-attck-mapping)
-- [Collaboration](#collaboration)
+- [Project Ownership](#project-ownership)
 - [Project Status](#project-status)
 - [Project Roadmap](#project-roadmap)
 - [Future Enhancements](#future-enhancements)
@@ -188,6 +197,60 @@ ps aux
 
 ---
 
+---
+
+## Detection Validation Evidence
+
+This section provides visual proof of attack simulation, telemetry detection, SIEM ingestion, and cross-layer investigation workflows.
+
+### Cross-Layer Detection Timeline
+
+Attack activity traced across multiple layers of the detection pipeline.
+
+![Cross Layer Timeline](artifacts/screenshots/cross-layer-detection-timeline.png)
+
+---
+
+### Attack Simulation (Kali Linux)
+
+Controlled reconnaissance activity executed from attacker node.
+
+![Attack Simulation](artifacts/screenshots/kali-nmap-attack-simulation.png)
+
+---
+
+### Suricata Detection
+
+Network-layer telemetry captured suspicious scan activity.
+
+![Suricata Detection](artifacts/screenshots/suricata-nmap-detection.png)
+
+---
+
+### Wazuh Correlation
+
+Correlated alert generated from ingested security telemetry.
+
+![Wazuh Detection](artifacts/screenshots/wazuh-nmap-detection.png)
+
+---
+
+### Splunk Ingestion
+
+Wazuh alerts successfully forwarded into Splunk for investigation.
+
+![Splunk Ingestion](artifacts/screenshots/splunk-wazuh-ingestion.png)
+
+---
+
+### Splunk HEC Pipeline Validation
+
+HTTP Event Collector integration validated successfully.
+
+![HEC Validation](artifacts/screenshots/splunk-hec-pipeline-validation.png)
+
+---
+
 ## Technologies Used
 
 - Kali Linux  
@@ -240,7 +303,6 @@ Full-Detection-Pipeline-Lab/
     └── project-notes.md
 ```
 
-
 ---
 
 ## MITRE ATT&CK Mapping
@@ -255,9 +317,16 @@ This project maps detections to:
 
 ---
 
-## Collaboration
+## Project Ownership
 
-This project is being developed as a **collaborative detection engineering lab**.
+Designed and engineered as an independent detection engineering lab.
+
+
+## Detection Validation Evidence
+
+
+
+
 
 ### Roles
 
@@ -281,11 +350,9 @@ This project is being developed as a **collaborative detection engineering lab**
 | Phase | Status |
 |------|--------|
 | Architecture | Complete |
-| Repo Setup | Complete |
-| Telemetry Design | Complete |
-| Infrastructure Setup | In Progress |
-| Attack Simulation | Pending |
-| Correlation Testing | Pending |
+| Splunk HEC Integration | Complete |
+| Attack Simulation | Complete |
+| Detection Validation | In Progress |
 
 ---
 
@@ -338,10 +405,13 @@ This project is being developed as a **collaborative detection engineering lab**
 ## Author
 
 **Esla Kwanza**  
-Cybersecurity | Detection Engineering | SOC | Cloud Security  
+Security Engineer | Detection Engineering | SOC Operations | Cloud Security 
 
 GitHub:  
 https://github.com/kesleeNcrypto
+
+LinkedIn:
+www.linkedin.com/in/esla-kwanza-cybersecurity
 
 ---
 
