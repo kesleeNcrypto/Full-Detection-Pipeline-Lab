@@ -207,7 +207,7 @@ This section provides visual proof of attack simulation, telemetry detection, SI
 
 Attack activity traced across multiple layers of the detection pipeline.
 
-![Cross Layer Timeline](artifacts/screenshots/cross-layer-detection-timeline.png)
+![Cross Layer Timeline](artifacts/cross-layer-detection-timeline.png)
 
 ---
 
@@ -215,7 +215,7 @@ Attack activity traced across multiple layers of the detection pipeline.
 
 Controlled reconnaissance activity executed from attacker node.
 
-![Attack Simulation](artifacts/screenshots/kali-nmap-attack-simulation.png)
+![Attack Simulation](artifacts/kali-nmap-attack-simulation.png)
 
 ---
 
@@ -223,7 +223,7 @@ Controlled reconnaissance activity executed from attacker node.
 
 Network-layer telemetry captured suspicious scan activity.
 
-![Suricata Detection](artifacts/screenshots/suricata-nmap-detection.png)
+![Suricata Detection](artifacts/suricata-nmap-detection.png)
 
 ---
 
@@ -231,7 +231,7 @@ Network-layer telemetry captured suspicious scan activity.
 
 Correlated alert generated from ingested security telemetry.
 
-![Wazuh Detection](artifacts/screenshots/wazuh-nmap-detection.png)
+![Wazuh Detection](artifacts/wazuh-nmap-detection.png)
 
 ---
 
@@ -239,7 +239,7 @@ Correlated alert generated from ingested security telemetry.
 
 Wazuh alerts successfully forwarded into Splunk for investigation.
 
-![Splunk Ingestion](artifacts/screenshots/splunk-wazuh-ingestion.png)
+![Splunk Ingestion](artifacts/splunk-wazuh-ingestion.png)
 
 ---
 
@@ -247,7 +247,7 @@ Wazuh alerts successfully forwarded into Splunk for investigation.
 
 HTTP Event Collector integration validated successfully.
 
-![HEC Validation](artifacts/screenshots/splunk-hec-pipeline-validation.png)
+![HEC Validation](artifacts/splunk-hec-pipeline-validation.png)
 
 ---
 
@@ -322,10 +322,31 @@ This project maps detections to:
 Designed and engineered as an independent detection engineering lab.
 
 
-## Detection Validation Evidence
+## Operational Roles
 
+### Network Detection
 
+- Suricata IDS
+- Traffic Analysis
+- Reconnaissance Detection
 
+### Endpoint Telemetry
+
+- Sysmon
+- Process Monitoring
+- Host Visibility
+
+### SIEM Correlation
+
+- Wazuh
+- Alert Correlation
+- Detection Engineering
+
+### Investigation & Case Management
+
+- Splunk
+- TheHive
+- Incident Analysis
 
 
 ### Roles
